@@ -6,7 +6,7 @@ export const parseFile = (file: any) => {
 
   const transactions = lines
     .map((line: string) => {
-      const typeStr = line.slice(0, 3).trim();
+      const typeStr = line.slice(0, 1).trim();
       const type = typeStr ? parseInt(typeStr, 10) : NaN;
 
       if (isNaN(type)) {
@@ -14,7 +14,7 @@ export const parseFile = (file: any) => {
         return null;
       }
 
-      const dateString = line.slice(3, 28).trim();
+      const dateString = line.slice(1, 26).trim();
 
       const date = moment(dateString, moment.ISO_8601).toDate();
 
@@ -31,7 +31,7 @@ export const parseFile = (file: any) => {
         return null;
       }
 
-      const valueStr = line.slice(56, 68).trim();
+      const valueStr = line.slice(56, 66).trim();
       const value = valueStr ? parseInt(valueStr, 10) / 100 : 0;
 
       if (type && date && product && seller && value >= 0) {
