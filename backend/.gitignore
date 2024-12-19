@@ -1,0 +1,65 @@
+# Node.js
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Logs
+logs
+*.log
+*.log.*
+pids
+*.pid
+*.pid.lock
+
+# Build
+dist
+build
+
+# TypeScript
+*.tsbuildinfo
+
+# Next.js
+.next
+out
+
+# Tailwind
+.tailwind
+
+# Cypress
+/cypress/screenshots
+/cypress/videos
+
+# Environment variables
+.env
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+docker-compose.override.*.yml
+*.log
+*.pid
+*.pid.lock
+
+# Database
+db-data/
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+.cache/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.tmp
+*.temp
