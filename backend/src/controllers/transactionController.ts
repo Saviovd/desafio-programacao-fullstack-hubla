@@ -17,8 +17,6 @@ export const uploadTransactions = async (
 
     const transactions = parseFile(file);
     console.log('transactions/ ',transactions)
-    res.status(200).json({ transactions: transactions });
-    return
     await saveTransactions(transactions);
     res.status(200).json({ message: "Transactions uploaded successfully." });
   } catch (error) {
