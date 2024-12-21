@@ -26,13 +26,13 @@ export default function Login() {
 
     setError([]);
     try {
-      // -----Simulação de resposta bem-sucedida de login-----
+      // -----Login Successful Response Simulation-----
 
-      // Simulação de salvamento de token
+      // Token saving simulation
       const data = { token: "dummy_token" };
       Cookie.set("auth_token", data.token);
 
-      // Redirecionamento para a página dashboard
+      // Redirection to the dashboard page
       router.push("/dashboard");
     } catch (error) {
       console.error(error);
