@@ -1,4 +1,5 @@
 import useTransactions from "@/hooks/useTransactions";
+import Title from "./Title";
 
 export default function Metrics() {
   const { metrics, error } = useTransactions();
@@ -8,7 +9,7 @@ export default function Metrics() {
   }
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold mb-6 text-white">Resumo de Métricas</h2>
+      <Title content="Resumo de Métricas" />
       {!metrics ? (
         <div className="text-center text-white">Carregando...</div>
       ) : (

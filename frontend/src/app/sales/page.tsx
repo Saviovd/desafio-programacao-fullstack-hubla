@@ -2,6 +2,8 @@
 import { getTransactions } from "@/services/transactions/getTransactions";
 import Sidebar from "@/components/SideBar";
 import { useEffect, useState } from "react";
+import SectionTitle from "@/components/SectionTitle";
+import Signature from "@/components/Signature";
 
 export default function Dashboard() {
   const [transactions, setTransactions] = useState<any[]>([]);
@@ -49,7 +51,7 @@ export default function Dashboard() {
       <Sidebar />
       <div className="w-full flex flex-col justify-between">
         <main className="flex flex-col gap-8 row-start-2 items-center p-6 sm:items-start min-h-[800px] justify-start">
-          <h1>Sales</h1>
+          <SectionTitle content="Vendas" />
 
           <div className="w-11/12 max-w-[1400px] m-auto mt-0 overflow-x-auto border border-zinc-800 rounded-lg ">
             <table className="min-w-full table-auto text-white">
@@ -105,16 +107,7 @@ export default function Dashboard() {
           </div>
         </main>
 
-        <div className="fixed right-2 bottom-1 flex gap-1">
-          <span>Developed by</span>
-          <a
-            className="text-lime-600 transition-colors hover:text-lime-500"
-            href="https://github.com/Saviovd"
-            target="_blank"
-          >
-            Sávio Almeida
-          </a>
-        </div>
+        <Signature />
       </div>
     </div>
   );

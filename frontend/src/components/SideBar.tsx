@@ -27,9 +27,9 @@ export default function Sidebar() {
 
   return (
     <div className="h-screen pb-10 w-64 lg:w-80 bg-zinc-900 border-r border-zinc-800 flex flex-col">
-      <div className="pt-8 pb-6 text-lg w-[90%] m-auto font-bold border-b border-zinc-800">
+      <h1 className="pt-8 pb-6 text-lg w-[90%] m-auto font-bold border-b border-zinc-800">
         <Logo className="m-auto" />
-      </div>
+      </h1>
       <nav className="flex-1 mt-4 p-3">
         <ul className="flex flex-col gap-2">
           {routes.map(({ route, section }) => (

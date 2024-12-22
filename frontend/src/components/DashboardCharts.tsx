@@ -15,6 +15,7 @@ import {
   Tooltip as LineTooltip,
   Legend as LineLegend,
 } from "recharts";
+import Title from "./Title";
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -84,9 +85,7 @@ const DashboardCharts = () => {
   return (
     <div className="flex w-4/5 p-6 gap-8 flex-wrap">
       <div>
-        <h2 className="text-2xl font-bold mb-6 text-white">
-          Cursos mais vendidos
-        </h2>
+        <Title content="Cursos mais vendidos" />
         <PieChart width={320} height={400}>
           <Pie
             data={topSellersData}
@@ -107,7 +106,7 @@ const DashboardCharts = () => {
         </PieChart>
       </div>
       <div>
-        <h2 className="text-2xl font-bold mb-6 text-white">Vendas</h2>
+        <Title content="Vendas" />
         <LineChart
           width={340}
           height={300}

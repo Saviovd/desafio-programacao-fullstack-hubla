@@ -5,6 +5,7 @@ import Cookie from "js-cookie";
 import { validateFields } from "@/utils/validateFields";
 import Logo from "@/assets/Logo";
 import Button from "@/components/Button";
+import Signature from "@/components/Signature";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -110,16 +111,7 @@ export default function Login() {
           </a>
         </p>
       </div>
-      <div className="fixed right-2 bottom-1 flex gap-1">
-        <span>Developed by</span>
-        <a
-          className="text-lime-600 transition-colors hover:text-lime-500"
-          href="https://github.com/Saviovd"
-          target="_black"
-        >
-          Sávio Almeida
-        </a>
-      </div>
+      <Signature />
     </main>
   );
 }
