@@ -74,34 +74,41 @@ export default function Dashboard() {
   return (
     <div className="flex bg-zinc-900">
       <Sidebar />
-      <div className="w-full flex flex-col justify-between">
-        <main className="flex flex-col gap-8 row-start-2 items-center p-6 sm:items-start">
+      <div className="w-full flex flex-col justify-between h-screen">
+        <main className="flex flex-col gap-8 row-start-2 items-center pt-12 px-3 lg:p-6 sm:items-start">
           <SectionTitle content="Novas Transações" />
 
-          <div className="flex items-start justify-start gap-2 flex-wrap border border-zinc-800 py-2 px-3 rounded-lg w-fit">
-            <Title content="Fazer upload de transações" className="mb-0" />
-
-            <input
-              type="file"
-              accept=".txt"
-              onChange={handleFileChange}
-              className="text-white border border-zinc-800 bg-zinc-800 p-2 rounded-md"
-              disabled={isLoading}
+          <div className="w-full flex flex-col sm:flex-row items-center sm:items-start justify-start gap-2 flex-wrap border border-zinc-800 py-2 px-3 rounded-lg max-w-[1000px]">
+            <Title
+              content="Fazer upload de transações"
+              className="mb-0 text-xl"
             />
+            <div className="flex items-end gap-3 flex-col sm:flex-row">
+              <div className="flex flex-col">
+                <label>Insira um arquivo válido</label>
+                <input
+                  type="file"
+                  accept=".txt"
+                  onChange={handleFileChange}
+                  className="text-white border border-zinc-800 bg-zinc-800 p-2 rounded-md max-w-96 w-full sm:w-64"
+                  disabled={isLoading}
+                />
+              </div>
 
-            <Button
-              content={isLoading ? "Enviando..." : "Enviar"}
-              action={handleSubmit}
-              disabled={!file || isLoading}
-              className="w-auto"
-            />
+              <Button
+                content={isLoading ? "Enviando..." : "Enviar"}
+                action={handleSubmit}
+                disabled={!file || isLoading}
+                className="sm:w-auto max-w-96 w-full"
+              />
+            </div>
             {errorMessage && (
               <p className="text-red-500 text-left w-full">{errorMessage}</p>
             )}
           </div>
 
-          <div className="w-full border border-zinc-800 text-white rounded-md p-4">
-          <Title content="Histórico de Uploads" />
+          <div className="w-full border border-zinc-800 text-white rounded-md p-4 max-w-[1000px]">
+            <Title content="Histórico de Uploads" />
 
             {uploadHistory.length > 0 ? (
               <table className="w-full text-left border-collapse">
