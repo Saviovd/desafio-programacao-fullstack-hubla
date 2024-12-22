@@ -7,7 +7,7 @@ import SectionTitle from "@/components/SectionTitle";
 import Title from "@/components/Title";
 import Signature from "@/components/Signature";
 
-export default function Dashboard() {
+export default function NewTransactions() {
   const [file, setFile] = useState<File | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);

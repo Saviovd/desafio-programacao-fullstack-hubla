@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import SectionTitle from "@/components/SectionTitle";
 import Signature from "@/components/Signature";
 
-export default function Dashboard() {
+export default function Sales() {
   const [transactions, setTransactions] = useState<any[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 15;
