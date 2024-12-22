@@ -20,7 +20,7 @@ const routes: Route[] = [
 
 export default function Sidebar() {
   const { width } = useWindowSize();
-  const [isOpen, setIsOpen] = useState(width <= 1024 ? false : true);
+  const [isOpen, setIsOpen] = useState((width && width <= 1024) ? false : true);
   const pathname = usePathname();
   const router = useRouter();
 
