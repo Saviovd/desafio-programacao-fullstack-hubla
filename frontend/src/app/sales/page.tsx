@@ -49,35 +49,37 @@ export default function Dashboard() {
   return (
     <div className="flex bg-zinc-900">
       <Sidebar />
-      <div className="w-full flex flex-col justify-between">
-        <main className="flex flex-col gap-8 row-start-2 items-center p-6 sm:items-start min-h-[800px] justify-start">
+      <div className="w-full flex flex-col justify-between h-screen">
+        <main className="flex flex-col gap-8 items-center pt-12 px-3 lg:p-6 sm:items-start min-h-[800px] justify-start">
           <SectionTitle content="Vendas" />
 
-          <div className="w-11/12 max-w-[1400px] m-auto mt-0 overflow-x-auto border border-zinc-800 rounded-lg ">
+          <div className="w-full max-w-[1400px] m-auto mt-0 overflow-x-auto border border-zinc-800 rounded-lg">
             <table className="min-w-full table-auto text-white">
               <thead>
-                <tr>
-                  <th className="px-4 py-2">Tipo</th>
-                  <th className="px-4 py-2">Data</th>
-                  <th className="px-4 py-2">Produto</th>
-                  <th className="px-4 py-2">Valor</th>
-                  <th className="px-4 py-2">Vendedor</th>
+                <tr className="bg-zinc-800">
+                  <th className="px-4 py-2 text-sm lg:text-base">Tipo</th>
+                  <th className="px-4 py-2 text-sm lg:text-base">Data</th>
+                  <th className="px-4 py-2 text-sm lg:text-base">Produto</th>
+                  <th className="px-4 py-2 text-sm lg:text-base">Valor</th>
+                  <th className="px-4 py-2 text-sm lg:text-base">Vendedor</th>
                 </tr>
               </thead>
               <tbody>
                 {currentTransactions.map((transaction) => (
                   <tr key={transaction.id} className="border-t border-zinc-700">
-                    <td className="px-4 py-2 text-center">
+                    <td className="px-4 py-2 text-center text-sm lg:text-base">
                       {getTypeDescription(transaction.type)}
                     </td>
-                    <td className="px-4 py-2 text-center">
+                    <td className="px-4 py-2 text-center text-sm lg:text-base">
                       {new Date(transaction.date).toLocaleDateString("pt-BR")}
                     </td>
-                    <td className="px-4 py-2 text-center">
+                    <td className="px-4 py-2 text-center text-sm lg:text-base">
                       {transaction.product}
                     </td>
-                    <td className="px-4 py-2 text-center">{`$${transaction.value}`}</td>
-                    <td className="px-4 py-2 text-center">
+                    <td className="px-4 py-2 text-center text-sm lg:text-base">
+                      {`$${transaction.value}`}
+                    </td>
+                    <td className="px-4 py-2 text-center text-sm lg:text-base">
                       {transaction.seller}
                     </td>
                   </tr>
@@ -86,7 +88,7 @@ export default function Dashboard() {
             </table>
           </div>
 
-          <div className="flex m-auto my-0 justify-center gap-4 mt-4">
+          <div className="flex flex-wrap justify-center gap-4 mt-4 mb-12 mx-auto">
             <button
               className="text-white px-4 py-2 cursor-pointer border border-zinc-700 hover:bg-zinc-700 rounded-lg"
               onClick={() => handlePageChange(currentPage - 1)}
