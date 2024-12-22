@@ -12,7 +12,7 @@ type Route = {
 const routes: Route[] = [
   { route: "/dashboard", section: "Home" },
   { route: "/sales", section: "Vendas" },
-  { route: "/send-transactions", section: "New transactions" },
+  { route: "/send-transactions", section: "Novas transações" },
 ];
 
 export default function Sidebar() {

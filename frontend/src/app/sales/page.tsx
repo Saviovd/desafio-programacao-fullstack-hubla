@@ -48,7 +48,7 @@ export default function Dashboard() {
     <div className="flex bg-zinc-900">
       <Sidebar />
       <div className="w-full flex flex-col justify-between">
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start min-h-[800px] justify-start">
+        <main className="flex flex-col gap-8 row-start-2 items-center p-6 sm:items-start min-h-[800px] justify-start">
           <h1>Sales</h1>
 
           <div className="w-11/12 max-w-[1400px] m-auto mt-0 overflow-x-auto border border-zinc-800 rounded-lg ">
