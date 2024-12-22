@@ -10,7 +10,7 @@ export default function Dashboard() {
     <div className="flex bg-zinc-900">
       <Sidebar />
       <div className="w-full flex flex-col justify-between">
-        <main className="flex flex-col w-full p-6 gap-8 row-start-2 items-center sm:items-start">
+        <main className="flex pt-12 px-3 flex-col w-full lg:p-6 gap-8 row-start-2 items-center sm:items-start">
           <SectionTitle content="Home" />
           <Metrics />
           <DashboardChart />

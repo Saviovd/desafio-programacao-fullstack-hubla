@@ -83,8 +83,8 @@ const DashboardCharts = () => {
   const growthData = formatDataForGrowth(transactions);
 
   return (
-    <div className="flex w-4/5 p-6 gap-8 flex-wrap">
-      <div>
+    <div className="flex w-full pb-10 lg:p-6 gap-8 flex-wrap">
+      <div className="w-full md:w-auto">
         <Title content="Cursos mais vendidos" />
         <PieChart width={320} height={400}>
           <Pie
@@ -105,10 +105,10 @@ const DashboardCharts = () => {
           <Legend />
         </PieChart>
       </div>
-      <div>
+      <div className="w-full md:w-auto">
         <Title content="Vendas" />
         <LineChart
-          width={340}
+          width={320}
           height={300}
           data={growthData}
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }}

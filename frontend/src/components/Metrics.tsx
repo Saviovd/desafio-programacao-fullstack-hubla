@@ -8,7 +8,7 @@ export default function Metrics() {
     return <div className="text-center text-red-500">{error}</div>;
   }
   return (
-    <div className="p-6">
+    <div className="lg:p-6 w-full">
       <Title content="Resumo de Métricas" />
       {!metrics ? (
         <div className="text-center text-white">Carregando...</div>
