@@ -47,10 +47,10 @@ export default function Sales() {
   const totalPages = Math.ceil(transactions.length / itemsPerPage);
 
   return (
-    <div className="flex bg-zinc-900">
+    <div className="flex bg-zinc-900 h-auto sm:h-screen">
       <Sidebar />
-      <div className="w-full flex flex-col justify-between h-screen">
-        <main className="flex flex-col gap-8 items-center pt-12 px-3 lg:p-6 sm:items-start min-h-[800px] justify-start">
+      <div className="w-full flex flex-col justify-between">
+        <main className="flex flex-col gap-8 items-center pt-12 px-3 lg:p-6 sm:items-start min-h-[800px] justify-start h-auto">
           <SectionTitle content="Vendas" />
 
           <div className="w-full max-w-[1400px] m-auto mt-0 overflow-x-auto border border-zinc-800 rounded-lg">

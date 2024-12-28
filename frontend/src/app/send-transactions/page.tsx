@@ -72,10 +72,10 @@ export default function NewTransactions() {
   };
 
   return (
-    <div className="flex bg-zinc-900">
+    <div className="flex bg-zinc-900 pb-10 h-auto sm:h-screen">
       <Sidebar />
-      <div className="w-full flex flex-col justify-between h-screen">
-        <main className="flex flex-col gap-8 row-start-2 items-center pt-12 px-3 lg:p-6 sm:items-start">
+      <div className="w-full flex flex-col justify-between">
+        <main className="flex flex-col gap-8 row-start-2 items-center pt-12 px-3 lg:p-6 sm:items-start h-auto">
           <SectionTitle content="Novas Transações" />
 
           <div className="w-full flex flex-col sm:flex-row items-center sm:items-start justify-start gap-2 flex-wrap border border-zinc-800 py-2 px-3 rounded-lg max-w-[1000px]">
