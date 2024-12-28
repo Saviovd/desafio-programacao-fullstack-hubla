@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -20,9 +20,17 @@ const routes: Route[] = [
 
 export default function Sidebar() {
   const { width } = useWindowSize();
-  const [isOpen, setIsOpen] = useState((width && width <= 1024) ? false : true);
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+
+  useEffect(() => {
+    if (width && width <= 1024) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  }, [width]);
 
   const handleLogout = () => {
     Cookie.remove("auth_token");
