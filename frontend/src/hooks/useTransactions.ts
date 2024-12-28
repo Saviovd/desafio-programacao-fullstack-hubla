@@ -7,7 +7,10 @@ type Metrics = {
   topSeller: string;
   creatorSales: number;
   affiliateSales: number;
-  courseCommissions: Record<string, { totalSales: number; commission: number; percentage: number }>;
+  courseCommissions: Record<
+    string,
+    { totalSales: number; commission: number; percentage: number }
+  >;
 };
 
 const useTransactions = () => {
@@ -31,7 +34,10 @@ const useTransactions = () => {
 
         const productCount: Record<string, number> = {};
         const sellerCount: Record<string, number> = {};
-        const courseCommissions: Record<string, { totalSales: number; commission: number; percentage: number }> = {};
+        const courseCommissions: Record<
+          string,
+          { totalSales: number; commission: number; percentage: number }
+        > = {};
 
         transactions.forEach((t) => {
           const value = Number(t.value);
@@ -47,7 +53,11 @@ const useTransactions = () => {
           }
 
           if (!courseCommissions[course]) {
-            courseCommissions[course] = { totalSales: 0, commission: 0, percentage };
+            courseCommissions[course] = {
+              totalSales: 0,
+              commission: 0,
+              percentage,
+            };
           }
           courseCommissions[course].totalSales += value;
           if (percentage > 0 && t.type === 2) {
@@ -58,13 +68,17 @@ const useTransactions = () => {
           sellerCount[t.seller] = (sellerCount[t.seller] || 0) + 1;
         });
 
-        const topProduct = Object.keys(productCount).reduce((a, b) => {
-          return productCount[a] > productCount[b] ? a : b;
-        });
+        const topProduct = Object.keys(productCount).length
+          ? Object.keys(productCount).reduce((a, b) => {
+              return productCount[a] > productCount[b] ? a : b;
+            })
+          : "Nenhum produto";
 
-        const topSeller = Object.keys(sellerCount).reduce((a, b) => {
-          return sellerCount[a] > sellerCount[b] ? a : b;
-        });
+        const topSeller = Object.keys(sellerCount).length
+          ? Object.keys(sellerCount).reduce((a, b) => {
+              return sellerCount[a] > sellerCount[b] ? a : b;
+            })
+          : "Nenhum vendedor";
 
         setMetrics({
           commissionPaid,
